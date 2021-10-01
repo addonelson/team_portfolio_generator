@@ -1,0 +1,28 @@
+{
+  "name": "team_portfolio_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest -- verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/addonelson/team_portfolio_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/addonelson/team_portfolio_generator/issues"
+  },
+  "homepage": "https://github.com/addonelson/team_portfolio_generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.5",
+    "jest": "^27.2.4"
+  }
+}
