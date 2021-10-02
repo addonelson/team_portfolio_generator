@@ -3,9 +3,7 @@ const Employee = require('../lib/Employee');
 test("test all setters", () => {
 const employee = new Employee ("John Doe", 23, "email address");
 expect(employee.name).toEqual("John Doe");
-
 expect(employee.id).toEqual(23);
-
 expect(employee.email).toEqual("email address");
 
 })
