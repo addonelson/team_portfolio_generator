@@ -191,5 +191,36 @@ function createIntern() {
 }
 
 function createIndex() {
-    fs.writeFile
+    const indexFile =  `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type="text/css" href="./assets/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    </head>
+    <body>
+        
+    </body>
+    </html>`
+
+    fs.writeFile('./assets/index.html', indexFile, function(err){
+        err ? console.error(err) : console.log("Your File Has Been Created");
+     });
 }
+ 
+ 
+function updateIndex() {
+    fs.appendFile('./assets/index.html',  )
+}
+
+// image icons (intern) <i class="fa-solid fa-user-graduate"></i>
+
+// image icon (Engineer) <i class="fa-solid fa-head-side-headphones"></i>
+
+// image icon (Employee) <i class="fa-solid fa-user"></i>
+
+// image icon (Manager) <i class="fa-duotone fa-user-secret"></i>
