@@ -10,7 +10,8 @@
 - [Credits](#credits)
 - [License](#license)
 ## Installation
-What are the steps required to install your project? node.js is required to run this project. As well as jest. from the command line your can input npm install and it will install all the required dependencies. 
+What are the steps required to install your project? node.js is required to run this project. As well as jest. from the command line your can input npm install and it will install all the required dependencies. You can watch the attached video on how the project works. https://drive.google.com/file/d/1IWaE_kWtnn-NLr5-p9UIIMfoMxgwRffP/view
+
 ## Usage ![alt text](assets/images/team_card_generator.png)
 
 ## Credits
