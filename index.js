@@ -242,8 +242,8 @@ function createIndex(cards) {
     </head>
     <body>
     <div class = "container">
-    <h1 class= "bg-primary text-white text-align center text"> Penn State employee roster</h1>
-    <div class="card-deck">
+    <h1 class= "bg-primary text-white text-center"> Penn State employee roster</h1>
+    <div class="card-deck text-center">
         ${cards}
     </div>
     </div>
@@ -274,7 +274,7 @@ function updateIndex(employee) {
 
 
     const employeeCard = `
-<div class="card bg-primary text-white">
+<div class="card bg-primary text-white text-align center">
 <h2 class="card-title">${employee.getRole()}</h2>
 
 ${title} <h3 class="card-text">${employee.name}</h3>
