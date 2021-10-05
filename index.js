@@ -266,7 +266,7 @@ function updateIndex(employee) {
         section = `<p> Office Number: ${employee.officeNumber}</p>`
     } else if (employee.getRole() === "Engineer") {
         title = `<i class="fas fa-laptop-code fa-3x"></i>`
-        section = `<p>GitHub: https://github.com/${employee.github}</p>`
+        section = `<a class="btn btn-seconday" href= "https://github.com/${employee.github}" role="button">Checkout my GitHub </a>`
     } else {
         title = `<i class="fa-solid fa-user-graduate fa-3x"></i>`
         section = `<p>School: ${employee.school}</p>`
@@ -279,7 +279,7 @@ function updateIndex(employee) {
 
 ${title} <h3 class="card-text">${employee.name}</h3>
 <p class="card-text">ID: ${employee.id}</p>
-<p class="card-text">Email me: ${employee.email}</p>
+<a class="card-text btn btn-seconday" role="button" href="mailto:${employee.email}" >Email me</a>
 ${section}
 </div>
 `
