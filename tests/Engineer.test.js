@@ -9,8 +9,8 @@ test("test all setters for engineer", () => {
 }) 
     test("test all getters for engineer", () => {
         const engineer = new Engineer ("Pony", 42, "A guy", "github");
-        expect(engineer.getName()).toEqual("Pony");
-        expect(engineer.getId()).toEqual(42);
-        expect(engineer.getEmail()).toEqual("A guy");
-        expect(engineer.getgithub()).toEqual("github");
+        expect(engineer.name).toEqual("Pony");
+        expect(engineer.id).toEqual(42);
+        expect(engineer.email).toEqual("A guy");
+        expect(engineer.github).toEqual("github");
     })

@@ -11,7 +11,7 @@ expect(employee.email).toEqual("email address");
 
 test("test all getters", () => {
     const employee = new Employee ("Pony", 42, "A guy");
-    expect(employee.getName()).toEqual("Pony");
-    expect(employee.getId()).toEqual(42);
-    expect(employee.getEmail()).toEqual("A guy");
+    expect(employee.name).toEqual("Pony");
+    expect(employee.id).toEqual(42);
+    expect(employee.email).toEqual("A guy");
 })
