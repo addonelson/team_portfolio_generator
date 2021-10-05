@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/addonelson/team_portfolio_generator#readme",
   "dependencies": {
+    "email-validator": "^2.0.4",
     "inquirer": "^8.1.5",
-    "jest": "^27.2.4"
+    "jest": "^27.2.4",
+    "openurl": "^1.1.1"
   }
 }

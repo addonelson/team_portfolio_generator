@@ -6,22 +6,11 @@ const Engineer = require("./lib/Engineer");
 const Employee = require('./lib/Employee');
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
+
 const {
     get
 } = require('http');
 const emptyArray = [];
-
-//Employee must have Name , ID, email, getName(), getID, getEmail(), getRole(returns employee)
-
-//Manager, inlcuded employee + office number override getRole(show manager)
-
-//Engineer employee + GitHub user name, getGithub, getRole(show Engineer)
-
-//Intern emplee + school getSchool(), getRole(Intern)
-
-//add validation to each prompt to ensure proper user input
-
-//each Employee created will become a card.
 
 
 function startQuestions() {
@@ -43,8 +32,7 @@ function startQuestions() {
 
 function engineer() {
     const newEngineer = [...createEmployee, ...createEngineer]
-    console.log(newEngineer);
-
+    
     inquirer.prompt(newEngineer)
         .then((answer) => {
             const engineerGuy = new Engineer(answer.name, answer.id, answer.email, answer.github)
@@ -180,19 +168,6 @@ const createEmployee = [{
             }
         }
     },
-    // {
-    //     type: 'list',
-    //     message: "What is your role?",
-    //     name: 'role',
-    //     choices: ["Engineer", "Intern"],
-    //     validate: (value) => {
-    //         if (value) {
-    //             return true
-    //         } else {
-    //             return 'I need you to choose a role'
-    //         }
-    //     }
-    // },
 ]
 
 
@@ -260,13 +235,14 @@ function createIndex(cards) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Employee Card Generator</title>
         <link rel="stylesheet" type="text/css" href="./assets/style.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
     <div class = "container">
+    <h1 class= "bg-primary text-white text-align center text"> Penn State employee roster</h1>
     <div class="card-deck">
         ${cards}
     </div>
@@ -281,29 +257,29 @@ function createIndex(cards) {
 
 function updateIndex(employee) {
 
-
+    
     let section = "";
     let title = "";
 
     if (employee.getRole() === "Manager") {
-        title = `<i class="fa-duotone fa-user-secret"></i>`
+        title = `<i class="fas fa-user-secret fa-3x"></i>`
         section = `<p> Office Number: ${employee.officeNumber}</p>`
     } else if (employee.getRole() === "Engineer") {
-        title = `<i class="fa-solid fa-head-side-headphones"></i>`
-        section = `<p>GitHub: ${employee.github}</p>`
+        title = `<i class="fas fa-laptop-code fa-3x"></i>`
+        section = `<p>GitHub: https://github.com/${employee.github}</p>`
     } else {
-        title = `<i class="fa-solid fa-user-graduate"></i>`
+        title = `<i class="fa-solid fa-user-graduate fa-3x"></i>`
         section = `<p>School: ${employee.school}</p>`
     }
 
 
     const employeeCard = `
-    <div class="card">
-<h1 class="card-title">${employee.getRole()}</h1>
-<h2 class="card-text">${employee.name}</h2>
-${title}
+<div class="card bg-primary text-white">
+<h2 class="card-title">${employee.getRole()}</h2>
+
+${title} <h3 class="card-text">${employee.name}</h3>
 <p class="card-text">ID: ${employee.id}</p>
-<p class="card-text">Email address: mailto:${employee.email}</p>
+<p class="card-text">Email me: ${employee.email}</p>
 ${section}
 </div>
 `
@@ -314,24 +290,12 @@ startQuestions();
 
 function generateTeam() {
 
-    console.log(emptyArray);
-
     let cards = "";
     for (let i = 0; i < emptyArray.length; i++) {
         cards = cards + updateIndex(emptyArray[i])
 
     }
 
-   
-
     createIndex(cards);
-    
+
 }
-
-// image icons (intern) <i class="fa-solid fa-user-graduate"></i>
-
-// image icon (Engineer) <i class="fa-solid fa-head-side-headphones"></i>
-
-// image icon (Employee) <i class="fa-solid fa-user"></i>
-
-// image icon (Manager) <i class="fa-duotone fa-user-secret"></i>
